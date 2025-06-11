@@ -1,0 +1,166 @@
+# Copyright (C) 2024 ModernBiz Pro
+# This file is distributed under the same license as the ModernBiz Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: ModernBiz Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/modernbiz-pro\n"
+"POT-Creation-Date: 2024-01-01 12:00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: functions.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:46
+msgid "Footer Menu"
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:65
+msgid "Primary Menu"
+msgstr ""
+
+#: header.php:78
+msgid "Toggle dark mode"
+msgstr ""
+
+#: header.php:105
+msgid "Toggle search"
+msgstr ""
+
+#: header.php:115
+msgid "Close search"
+msgstr ""
+
+#: footer.php:85
+msgid "Quick Links"
+msgstr ""
+
+#: footer.php:95
+msgid "Contact Info"
+msgstr ""
+
+#: footer.php:105
+msgid "Address:"
+msgstr ""
+
+#: footer.php:110
+msgid "Phone:"
+msgstr ""
+
+#: footer.php:115
+msgid "Email:"
+msgstr ""
+
+#: footer.php:122
+msgid "Newsletter"
+msgstr ""
+
+#: footer.php:123
+msgid "Subscribe to our newsletter for updates and news."
+msgstr ""
+
+#: footer.php:126
+msgid "Your email address"
+msgstr ""
+
+#: footer.php:129
+msgid "Subscribe"
+msgstr ""
+
+#: footer.php:140
+msgid "© %1$s %2$s. All rights reserved."
+msgstr ""
+
+#: footer.php:152
+msgid "Privacy Policy"
+msgstr ""
+
+#: footer.php:156
+msgid "Terms of Service"
+msgstr ""
+
+#: footer.php:168
+msgid "Powered by %1$s | Theme: %2$s"
+msgstr ""
+
+#: footer.php:175
+msgid "Back to top"
+msgstr ""
+
+#: template-parts/homepage/layout-1.php:15
+msgid "Welcome to Our Modern Business"
+msgstr ""
+
+#: template-parts/homepage/layout-1.php:16
+msgid "We provide innovative solutions for your business needs with cutting-edge technology and exceptional service."
+msgstr ""
+
+#: template-parts/homepage/layout-1.php:20
+msgid "Our Services"
+msgstr ""
+
+#: template-parts/homepage/layout-1.php:23
+msgid "Contact Us"
+msgstr ""
+
+#: template-parts/homepage/layout-1.php:31
+msgid "Why Choose Us"
+msgstr ""
+
+#: template-parts/homepage/layout-1.php:32
+msgid "We offer comprehensive solutions tailored to your business needs"
+msgstr ""
+
+#: inc/customizer.php:45
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:46
+msgid "Customize your theme settings"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "Homepage Layout"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid "Select Homepage Layout"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Corporate Business"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Creative Agency"
+msgstr ""
+
+#: inc/customizer.php:64
+msgid "Tech Startup"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Dark Mode"
+msgstr ""
+
+#: inc/customizer.php:76
+msgid "Enable Dark Mode by Default"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Auto Dark Mode (6 PM - 6 AM)"
+msgstr ""
+
+#: inc/customizer.php:84
+msgid "Automatically enable dark mode during evening hours"
+msgstr ""
+

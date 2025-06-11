@@ -1,0 +1,482 @@
+/*
+Theme Name: ModernBiz Pro
+Description: RTL (Right-to-Left) language support stylesheet for Arabic and other RTL languages
+*/
+
+/* RTL Base Styles */
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Typography RTL */
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+    text-align: right;
+}
+
+.rtl p {
+    text-align: right;
+}
+
+/* Header RTL */
+.rtl .header-container {
+    flex-direction: row-reverse;
+}
+
+.rtl .site-branding {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.rtl .header-actions {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Navigation RTL */
+.rtl .main-navigation ul {
+    flex-direction: row-reverse;
+}
+
+.rtl .main-navigation a::after {
+    left: auto;
+    right: 0;
+}
+
+/* Mobile Menu RTL */
+.rtl .mobile-menu-toggle {
+    left: 20px;
+    right: auto;
+}
+
+.rtl .main-navigation {
+    left: auto;
+    right: 0;
+}
+
+/* Grid RTL */
+.rtl .grid {
+    direction: rtl;
+}
+
+.rtl .grid > * {
+    direction: ltr;
+    text-align: right;
+}
+
+/* Cards RTL */
+.rtl .card {
+    text-align: right;
+}
+
+.rtl .card-icon {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Hero Section RTL */
+.rtl .hero-content {
+    text-align: right;
+}
+
+.rtl .hero-buttons {
+    justify-content: flex-end;
+}
+
+/* Features Section RTL */
+.rtl .features-section .card {
+    text-align: right;
+}
+
+/* Services Section RTL */
+.rtl .services-section .card {
+    text-align: right;
+}
+
+/* About Section RTL */
+.rtl .about-content {
+    text-align: right;
+}
+
+.rtl .stats-grid {
+    direction: rtl;
+}
+
+.rtl .stat-item {
+    text-align: right;
+}
+
+/* Team Section RTL */
+.rtl .team-member {
+    text-align: right;
+}
+
+.rtl .team-info {
+    text-align: right;
+}
+
+/* Testimonials RTL */
+.rtl .testimonial-card {
+    text-align: right;
+}
+
+.rtl .testimonial-author {
+    text-align: right;
+}
+
+/* Contact Section RTL */
+.rtl .contact-info {
+    text-align: right;
+}
+
+.rtl .contact-item {
+    flex-direction: row-reverse;
+}
+
+.rtl .contact-icon {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+.rtl .contact-details {
+    text-align: right;
+}
+
+/* Forms RTL */
+.rtl .form-group {
+    text-align: right;
+}
+
+.rtl input,
+.rtl textarea,
+.rtl select {
+    text-align: right;
+}
+
+.rtl .btn {
+    text-align: center;
+}
+
+/* Footer RTL */
+.rtl .footer-content {
+    direction: rtl;
+}
+
+.rtl .footer-section {
+    text-align: right;
+}
+
+.rtl .footer-bottom-content {
+    flex-direction: row-reverse;
+}
+
+.rtl .copyright {
+    text-align: right;
+}
+
+.rtl .footer-links {
+    text-align: left;
+}
+
+/* Sidebar RTL */
+.rtl .sidebar {
+    text-align: right;
+}
+
+.rtl .widget {
+    text-align: right;
+}
+
+.rtl .widget ul {
+    padding-right: 0;
+    padding-left: 1rem;
+}
+
+.rtl .widget li {
+    text-align: right;
+}
+
+/* Blog RTL */
+.rtl .post-content {
+    text-align: right;
+}
+
+.rtl .entry-meta {
+    text-align: right;
+}
+
+.rtl .entry-meta > span {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+.rtl .entry-meta > span:last-child {
+    margin-left: 0;
+}
+
+.rtl .entry-meta > span:first-child {
+    margin-right: 1rem;
+}
+
+.rtl .tag-links {
+    text-align: right;
+}
+
+.rtl .post-navigation {
+    direction: rtl;
+}
+
+.rtl .nav-previous {
+    float: right;
+    text-align: right;
+}
+
+.rtl .nav-next {
+    float: left;
+    text-align: left;
+}
+
+/* Comments RTL */
+.rtl .comment-list {
+    text-align: right;
+}
+
+.rtl .comment-body {
+    text-align: right;
+}
+
+.rtl .comment-meta {
+    text-align: right;
+}
+
+.rtl .comment-content {
+    text-align: right;
+}
+
+.rtl .comment-reply-link {
+    float: left;
+}
+
+/* Pagination RTL */
+.rtl .pagination {
+    direction: rtl;
+}
+
+.rtl .page-numbers {
+    direction: ltr;
+}
+
+/* Search RTL */
+.rtl .search-form {
+    direction: rtl;
+}
+
+.rtl .search-field {
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 3rem;
+}
+
+.rtl .search-submit {
+    left: 0;
+    right: auto;
+}
+
+/* Breadcrumbs RTL */
+.rtl .breadcrumbs {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl .breadcrumbs a {
+    direction: ltr;
+}
+
+/* Portfolio RTL */
+.rtl .portfolio-filter {
+    direction: rtl;
+    justify-content: flex-end;
+}
+
+.rtl .portfolio-item {
+    text-align: right;
+}
+
+.rtl .portfolio-content {
+    text-align: right;
+}
+
+/* WooCommerce RTL */
+.rtl .woocommerce .product {
+    text-align: right;
+}
+
+.rtl .woocommerce .product-title {
+    text-align: right;
+}
+
+.rtl .woocommerce .price {
+    text-align: right;
+}
+
+.rtl .woocommerce .add_to_cart_button {
+    text-align: center;
+}
+
+.rtl .woocommerce .cart-contents {
+    direction: rtl;
+}
+
+.rtl .woocommerce .checkout-form {
+    text-align: right;
+}
+
+.rtl .woocommerce .form-row {
+    text-align: right;
+}
+
+.rtl .woocommerce .form-row label {
+    text-align: right;
+}
+
+.rtl .woocommerce .form-row input,
+.rtl .woocommerce .form-row textarea,
+.rtl .woocommerce .form-row select {
+    text-align: right;
+}
+
+/* Elementor RTL */
+.rtl .elementor-section {
+    direction: rtl;
+}
+
+.rtl .elementor-widget-container {
+    text-align: right;
+}
+
+.rtl .elementor-heading-title {
+    text-align: right;
+}
+
+.rtl .elementor-text-editor {
+    text-align: right;
+}
+
+.rtl .elementor-button {
+    text-align: center;
+}
+
+/* Back to Top RTL */
+.rtl .back-to-top {
+    left: 20px;
+    right: auto;
+}
+
+/* Scroll Progress RTL */
+.rtl .scroll-progress {
+    direction: ltr;
+}
+
+.rtl .progress-bar {
+    left: auto;
+    right: 0;
+    transform-origin: right;
+}
+
+/* Dark Mode Toggle RTL */
+.rtl .dark-mode-toggle {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+/* Language Switcher RTL */
+.rtl .language-switcher {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+.rtl .language-select {
+    text-align: right;
+}
+
+/* Responsive RTL */
+@media (max-width: 768px) {
+    .rtl .mobile-menu-toggle {
+        left: 20px;
+        right: auto;
+    }
+    
+    .rtl .header-actions {
+        flex-direction: row-reverse;
+    }
+    
+    .rtl .hero-buttons {
+        align-items: flex-end;
+    }
+    
+    .rtl .footer-bottom-content {
+        flex-direction: column;
+        text-align: right;
+    }
+}
+
+/* Arabic Font Support */
+.rtl {
+    font-family: 'Noto Sans Arabic', 'Amiri', 'Scheherazade', 'Lateef', 'Noto Kufi Arabic', Arial, sans-serif;
+}
+
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+    font-family: 'Noto Sans Arabic', 'Amiri', 'Scheherazade', 'Lateef', 'Noto Kufi Arabic', Arial, sans-serif;
+    font-weight: 600;
+}
+
+/* Hebrew Font Support */
+.rtl[lang="he"], .rtl[lang="he-IL"] {
+    font-family: 'Noto Sans Hebrew', 'David Libre', 'Frank Ruehl Libre', Arial, sans-serif;
+}
+
+.rtl[lang="he"] h1, .rtl[lang="he"] h2, .rtl[lang="he"] h3, 
+.rtl[lang="he"] h4, .rtl[lang="he"] h5, .rtl[lang="he"] h6,
+.rtl[lang="he-IL"] h1, .rtl[lang="he-IL"] h2, .rtl[lang="he-IL"] h3, 
+.rtl[lang="he-IL"] h4, .rtl[lang="he-IL"] h5, .rtl[lang="he-IL"] h6 {
+    font-family: 'Noto Sans Hebrew', 'David Libre', 'Frank Ruehl Libre', Arial, sans-serif;
+}
+
+/* Persian/Farsi Font Support */
+.rtl[lang="fa"], .rtl[lang="fa-IR"] {
+    font-family: 'Noto Sans Arabic', 'Vazir', 'Sahel', 'Samim', Arial, sans-serif;
+}
+
+.rtl[lang="fa"] h1, .rtl[lang="fa"] h2, .rtl[lang="fa"] h3, 
+.rtl[lang="fa"] h4, .rtl[lang="fa"] h5, .rtl[lang="fa"] h6,
+.rtl[lang="fa-IR"] h1, .rtl[lang="fa-IR"] h2, .rtl[lang="fa-IR"] h3, 
+.rtl[lang="fa-IR"] h4, .rtl[lang="fa-IR"] h5, .rtl[lang="fa-IR"] h6 {
+    font-family: 'Noto Sans Arabic', 'Vazir', 'Sahel', 'Samim', Arial, sans-serif;
+}
+
+/* Urdu Font Support */
+.rtl[lang="ur"], .rtl[lang="ur-PK"] {
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', Arial, sans-serif;
+}
+
+.rtl[lang="ur"] h1, .rtl[lang="ur"] h2, .rtl[lang="ur"] h3, 
+.rtl[lang="ur"] h4, .rtl[lang="ur"] h5, .rtl[lang="ur"] h6,
+.rtl[lang="ur-PK"] h1, .rtl[lang="ur-PK"] h2, .rtl[lang="ur-PK"] h3, 
+.rtl[lang="ur-PK"] h4, .rtl[lang="ur-PK"] h5, .rtl[lang="ur-PK"] h6 {
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', Arial, sans-serif;
+}
+
+/* Print Styles RTL */
+@media print {
+    .rtl * {
+        direction: rtl !important;
+        text-align: right !important;
+    }
+    
+    .rtl .header-actions,
+    .rtl .mobile-menu-toggle,
+    .rtl .back-to-top {
+        display: none !important;
+    }
+}
+
