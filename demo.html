@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernBiz Pro - WordPress Theme Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Light Mode Colors */
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-secondary: 'Poppins', sans-serif;
+            
+            /* Spacing */
+            --container-max-width: 1200px;
+            --section-padding: 80px 0;
+            --element-spacing: 2rem;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --border-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 2rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Links */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        .site-header {
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .site-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        .main-navigation ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .main-navigation a {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .main-navigation a:hover {
+            color: var(--primary-color);
+        }
+
+        .main-navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-navigation a:hover::after {
+            width: 100%;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .dark-icon {
+            display: none;
+        }
+
+        [data-theme="dark"] .light-icon {
+            display: none;
+        }
+
+        [data-theme="dark"] .dark-icon {
+            display: inline;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Demo Controls */
+        .demo-controls {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            z-index: 1001;
+        }
+
+        .demo-controls h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .demo-controls button {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-controls button:hover,
+        .demo-controls button.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Layout Switcher */
+        .layout-content {
+            display: none;
+        }
+
+        .layout-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--bg-secondary);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.5rem; }
+
+            .demo-controls {
+                position: static;
+                transform: none;
+                margin: 2rem auto;
+                max-width: 300px;
+            }
+
+            .main-navigation {
+                display: none;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Demo Badge */
+        .demo-badge {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            z-index: 1002;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Badge -->
+    <div class="demo-badge">
+        🎨 LIVE DEMO
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-container">
+                <div class="site-logo">ModernBiz Pro</div>
+                
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="dark-mode-toggle" id="dark-mode-toggle">
+                        <span class="light-icon">🌙</span>
+                        <span class="dark-icon">☀️</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Demo Controls -->
+    <div class="demo-controls">
+        <h4>🎛️ Demo Controls</h4>
+        <button onclick="switchLayout('corporate')" class="active" id="btn-corporate">Corporate Layout</button>
+        <button onclick="switchLayout('creative')" id="btn-creative">Creative Layout</button>
+        <button onclick="toggleRTL()">Toggle RTL</button>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Corporate Layout -->
+    <div id="corporate-layout" class="layout-content active">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>Welcome to Our Modern Business</h1>
+                    <p>We provide innovative solutions for your business needs with cutting-edge technology and exceptional service.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn">Our Services</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Why Choose Us</h2>
+                    <p class="section-subtitle">We offer comprehensive solutions tailored to your business needs</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in">
+                        <div class="card-icon">🚀</div>
+                        <h3 class="card-title">Fast Performance</h3>
+                        <p>Lightning-fast loading times and optimized performance for better user experience.</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">🔒</div>
+                        <h3 class="card-title">Secure & Reliable</h3>
+                        <p>Enterprise-grade security measures to protect your data and ensure reliability.</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Mobile Responsive</h3>
+                        <p>Fully responsive design that works perfectly on all devices and screen sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-subtitle">Comprehensive solutions to help your business grow and succeed</p>
+                </div>
+
+                <div class="grid grid-2">
+                    <div class="card fade-in">
+                        <div class="card-icon">💻</div>
+                        <h3 class="card-title">Web Development</h3>
+                        <p>Custom web development solutions using the latest technologies and best practices.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Digital Marketing</h3>
+                        <p>Strategic digital marketing campaigns to boost your online presence and reach.</p>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Creative Layout -->
+    <div id="creative-layout" class="layout-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>Creative Solutions for Modern Businesses</h1>
+                    <p>We craft exceptional digital experiences that drive results and inspire action.</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn">View Portfolio</a>
+                        <a href="#contact" class="btn btn-secondary">Start Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="section" id="portfolio">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Our Latest Work</h2>
+                    <p class="section-subtitle">Explore our recent projects and creative solutions</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in">
+                        <div class="card-icon">🎨</div>
+                        <h3 class="card-title">E-commerce Platform</h3>
+                        <p>Modern e-commerce solution with advanced features and beautiful design.</p>
+                        <a href="#" class="btn btn-secondary">View Project</a>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Mobile Banking App</h3>
+                        <p>Secure and user-friendly banking application with intuitive interface.</p>
+                        <a href="#" class="btn btn-secondary">View Project</a>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">🏢</div>
+                        <h3 class="card-title">Corporate Website</h3>
+                        <p>Professional corporate website with content management system.</p>
+                        <a href="#" class="btn btn-secondary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="section" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Meet Our Team</h2>
+                    <p class="section-subtitle">Talented professionals dedicated to bringing your vision to life</p>
+                </div>
+
+                <div class="grid grid-4">
+                    <div class="card fade-in">
+                        <div class="card-icon">👨‍💼</div>
+                        <h3 class="card-title">Alex Johnson</h3>
+                        <p><strong>Creative Director</strong><br>Leading creative vision and design strategy</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">👩‍💻</div>
+                        <h3 class="card-title">Sarah Chen</h3>
+                        <p><strong>Lead Developer</strong><br>Full-stack development and technical architecture</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">👨‍🎨</div>
+                        <h3 class="card-title">Mike Rodriguez</h3>
+                        <p><strong>UX Designer</strong><br>User experience and interface design specialist</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon">👩‍💼</div>
+                        <h3 class="card-title">Emma Wilson</h3>
+                        <p><strong>Project Manager</strong><br>Ensuring projects are delivered on time and budget</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section (Common) -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your project? Contact us today for a free consultation</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="fade-in">
+                    <h3>Contact Information</h3>
+                    <div style="margin-top: 2rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <strong>📍 Address:</strong><br>
+                            123 Business Street, City, State 12345
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong>📞 Phone:</strong><br>
+                            <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <strong>✉️ Email:</strong><br>
+                            <a href="mailto:info@modernbizpro.com">info@modernbizpro.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <h3>Send Message</h3>
+                    <form style="margin-top: 1rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-primary); color: var(--text-primary);" required>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-primary); color: var(--text-primary);" required>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <textarea placeholder="Your Message" rows="4" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-primary); color: var(--text-primary); resize: vertical;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 ModernBiz Pro. All rights reserved. | <strong>WordPress Theme Demo</strong></p>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                ✨ Features: Dark Mode, RTL Support, WooCommerce, Elementor Compatible, Mobile Responsive
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Layout Switcher
+        function switchLayout(layout) {
+            // Hide all layouts
+            document.querySelectorAll('.layout-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected layout
+            document.getElementById(layout + '-layout').classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.demo-controls button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('btn-' + layout).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // RTL Toggle
+        function toggleRTL() {
+            const body = document.body;
+            const isRTL = body.dir === 'rtl';
+            body.dir = isRTL ? 'ltr' : 'rtl';
+            body.style.textAlign = isRTL ? 'left' : 'right';
+            
+            // Update font family for RTL
+            if (!isRTL) {
+                body.style.fontFamily = "'Noto Sans Arabic', 'Amiri', Arial, sans-serif";
+            } else {
+                body.style.fontFamily = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+            }
+        }
+
+        // Scroll Animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Bind dark mode toggle
+            document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+            
+            // Initial scroll animation check
+            handleScrollAnimations();
+            
+            // Scroll event listener
+            window.addEventListener('scroll', handleScrollAnimations);
+            
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 500);
+        });
+
+        // Form submission demo
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Demo: Form submitted successfully! 🎉\n\nIn the real theme, this would integrate with your contact form plugin or email system.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
